@@ -17,6 +17,10 @@ namespace QueenAttack.Logic
       {
         return true;
       }
+      // else if ((x => x + 1) || (y => y + 1))
+      // {
+      //   return true;
+      // }
       else
       {
         return false;

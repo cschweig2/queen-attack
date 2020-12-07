@@ -9,12 +9,24 @@ namespace QueenAttack
     public static void Main()
     {
       Queen whiteQueen = new Queen(4,1);
-      Console.WriteLine("Welcome to the game of chess. Please enter your piece location at coordinate X: ");
+      Console.WriteLine("Welcome to the game of chess. Please enter your piece location at coordinate X (less than or equal to 8): ");
       string strXCoord = Console.ReadLine();
       int xCoord = int.Parse(strXCoord);
-      Console.WriteLine("Please enter your piece location at coordinate Y: ");
+      
+      if (xCoord > 8)
+      {
+        Console.WriteLine("Please enter a number less than or equal to 8");
+        Main();
+      }
+
+      Console.WriteLine("Please enter your piece location at coordinate Y (less than or equal to 8): ");
       string strYCoord = Console.ReadLine();
       int yCoord = int.Parse(strYCoord);
+      if (yCoord > 8)
+      {
+        Console.WriteLine("Please enter a number less than or equal to 8");
+        Main();
+      }
 
       bool attack = Queen.CanQueenAttack(xCoord, yCoord);
 
